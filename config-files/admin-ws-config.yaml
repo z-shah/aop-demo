@@ -1,0 +1,57 @@
+gcp:
+  # Path of the component access service account's JSON key file
+  componentAccessServiceAccountKeyPath: "aop-svc.json"
+# Specify which vCenter resources to use
+vCenter:
+  # The credentials and address GKE On-Prem should use to connect to vCenter
+  credentials:
+    address: "vcsa-10942.f74535f5.us-west2.gve.goog"
+    # reference to vCenter credentials file
+    fileRef:
+      # read credentials from this file
+      path: credential.yaml
+      # entry in the credential file
+      entry: vCenter
+  datacenter: "Datacenter"
+  datastore: "vsanDatastore"
+  cluster: "Cluster"
+  network: "seg1"
+  # vSphere vm folder to deploy vms into. defaults to datacenter top level folder
+  folder: "Demo-Anthos-On-Prem-VMs"
+  resourcePool: "Demo-Anthos-On-Prem"
+  # Provide the path to vCenter CA certificate pub key for SSL verification
+  caCertPath: "rootCA.pem"
+# The URL of the proxy for the jump host
+# proxyUrl: ""
+adminWorkstation:
+  name: anthos-onprem-admin-ws
+  cpus: 4
+  memoryMB: 8192
+  # The boot disk size of the admin workstation in GB. It is recommended to use a
+  # disk with at least 50 GB to host images decompressed from the bundle.
+  diskGB: 50
+  # Name for the persistent disk to be mounted to the home directory (ending in .vmdk).
+  # Any directory in the supplied path must be created before deployment.
+  dataDiskName: gke-on-prem-admin-workstation-data-disk/gke-admin-ws-210520-113323-data-disk.vmdk
+  # The size of the data disk in MB.
+  dataDiskMB: 512
+  network:
+    # The IP allocation mode: 'dhcp' or 'static'
+    ipAllocationMode: "static"
+    # # The host config in static IP mode. Do not include if using DHCP
+    hostConfig:
+      # The IPv4 static IP address for the admin workstation
+      ip: "172.23.128.90"
+      # The IP address of the default gateway of the subnet in which the admin workstation
+      # is to be created
+      gateway: "172.23.128.1"
+      # The subnet mask of the network where you want to create your admin workstation
+      netmask: "255.255.255.0"
+      # The list of DNS nameservers to be used by the admin workstation
+      dns:
+      - "172.23.5.5"
+      - "172.23.0.8"
+      - "172.23.0.9"
+  # The URL of the proxy for the admin workstation
+  # proxyUrl: ""
+  ntpServer: ntp.ubuntu.com
