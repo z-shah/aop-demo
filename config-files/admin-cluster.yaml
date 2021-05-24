@@ -100,7 +100,7 @@ loadBalancer:
     # be between 1-255 and unique in a VLAN.
     vrid: 1
     # (Required) The IP announced by the master of Seesaw group
-    masterIP: "172.123.128.96"
+    masterIP: 172.123.128.96
     # (Required) The number CPUs per machine
     cpus: 2
     # (Required) Memory size in MB per machine
@@ -125,11 +125,11 @@ antiAffinityGroups:
   enabled: true
 connectivity: connected
 # (Optional) Specify the proxy configuration
-#proxy:
+proxy:
   # The URL of the proxy
-  # #  url: ""
+  url: ""
   # The domains and IP addresses excluded from proxying
-#  noProxy: ""
+  noProxy: ""
 # # (Optional) Use a private Docker registry to host GKE images
 # privateRegistry:
 #   # Do not include the scheme with your registry address
