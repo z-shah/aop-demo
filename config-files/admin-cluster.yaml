@@ -29,12 +29,9 @@ vCenter:
   dataDisk: "anthos-on-prem-poc.vmdk"
 # (Required) Network configuration
 network:
-  # # (Optional) This section overrides ipBlockFile values. Use with ipType "static" mode.
-  # # Used for seesaw nodes as well
   hostConfig:
-  #   # List of DNS servers
     dnsServers:
-     - 172.23.5.5
+      - 172.23.5.5
   #   # List of NTP servers
   #ntpServers:
   #- ""
