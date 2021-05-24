@@ -33,8 +33,9 @@ network:
     dnsServers:
       - 172.23.5.5
   #   # List of NTP servers
-  #ntpServers:
-  #- ""
+    ntpServers:
+      - "0.ubuntu.pool.ntp.org"
+      - "time1.google.com"
   #   # # List of DNS search domains
   #   # searchDomainsForDNS:
   #   # - ""
