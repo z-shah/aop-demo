@@ -25,16 +25,19 @@ gkeOnPremVersion: 1.7.1-gke.4
 network:
   # # (Optional) This section overrides ipBlockFile values. Use with ipType "static" mode.
   # # Used for seesaw nodes as well
-  # hostConfig:
-  #   # List of DNS servers
-  #   dnsServers:
-  #   - ""
-  #   # List of NTP servers
-  #   ntpServers:
-  #   - ""
-  #   # # List of DNS search domains
-  #   # searchDomainsForDNS:
-  #   # - ""
+  hostConfig:
+    # List of DNS servers
+    dnsServers:
+      - 172.23.5.5
+      - 172.23.0.8
+      - 172.23.0.9
+    # List of NTP servers
+    ntpServers:
+      - "0.ubuntu.pool.ntp.org"
+      - "time1.google.com"
+    # # List of DNS search domains
+    # searchDomainsForDNS:
+    # - ""
   ipMode:
     # (Required) Define what IP mode to use ("dhcp" or "static")
     type: dhcp
