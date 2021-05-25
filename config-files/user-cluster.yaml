@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: UserCluster
 # (Required) A unique name for this cluster
-name: ""
+name: "aop-poc-user-cluster"
 # (Required) GKE on-prem version (example: 1.3.0-gke.16)
 gkeOnPremVersion: 1.7.1-gke.4
 # # (Optional) vCenter configuration (default: inherit from the admin cluster)

@@ -26,7 +26,7 @@ vCenter:
       entry: vCenter
   # Provide the name for the persistent disk to be used by the deployment (ending
   # in .vmdk). Any directory in the supplied path must be created before deployment
-  dataDisk: anthos-on-prem-demo/anthos.vmdk 
+  dataDisk: anthos-on-prem-demo/anthos-on-prem-demo.vmdk 
 # (Required) Network configuration
 network:
   hostConfig:
@@ -157,7 +157,7 @@ stackdriver:
   enableVPC: false
   # The absolute or relative path to the key file for a GCP service account used to
   # send logs and metrics from the cluster
-  serviceAccountKeyPath: log-mon-sa-2105241203.json
+  serviceAccountKeyPath: log-mon-sa-2105242043.json
   # (Optional) Disable vsphere resource metrics collection from vcenter.  False by
   # default
   disableVsphereResourceMetrics: false
