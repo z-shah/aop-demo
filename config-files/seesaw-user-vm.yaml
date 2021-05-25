@@ -1,0 +1,7 @@
+blocks:
+  - netmask: "255.255.255.0"
+    gateway: "172.23.128.1"
+    ips:
+    - ip: "172.23.128.87"
+      hostname: "seesaw-admin-vm"
+      

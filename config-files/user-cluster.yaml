@@ -56,9 +56,9 @@ loadBalancer:
   # (Required) The VIPs to use for load balancing
   vips:
     # Used to connect to the Kubernetes API
-    controlPlaneVIP: ""
+    controlPlaneVIP: "172.23.128.85"
     # Shared by all services for ingress traffic
-    ingressVIP: ""
+    ingressVIP: "172.23.128.90"
   # (Required) Which load balancer to use "F5BigIP" "Seesaw" or "ManualLB". Uncomment
   # the corresponding field below to provide the detailed spec
   kind: Seesaw
@@ -91,12 +91,12 @@ loadBalancer:
     # (Required) The absolute or relative path to the yaml file to use for IP allocation
     # for LB VMs. Must contain one or two IPs. Hostconfig part will be overwritten
     # by network.hostconfig if specified.
-    ipBlockFilePath: ""
+    ipBlockFilePath: "seesaw-user-vm.yaml"
     # (Required) The Virtual Router IDentifier of VRRP for the Seesaw group. Must
     # be between 1-255 and unique in a VLAN.
-    vrid: 0
+    vrid: 2
     # (Required) The IP announced by the master of Seesaw group
-    masterIP: ""
+    masterIP: "172.23.128.86"
     # (Required) The number CPUs per machine
     cpus: 4
     # (Required) Memory size in MB per machine
@@ -131,7 +131,7 @@ masterNode:
 # (Required) List of node pools. The total un-tainted replicas across all node pools
 # must be greater than or equal to 3
 nodePools:
-- name: pool-1
+- name: user-pool-1
   cpus: 4
   memoryMB: 8192
   # How many machines of this type to deploy
@@ -220,11 +220,11 @@ antiAffinityGroups:
 stackdriver:
   projectID: anthos-onprem-demo-314300
   # A GCP region where you would like to store logs and metrics for this cluster.
-  clusterLocation: us-central1
+  clusterLocation: australia-southeast1
   enableVPC: false
   # The absolute or relative path to the key file for a GCP service account used to
   # send logs and metrics from the cluster
-  serviceAccountKeyPath: log-mon-sa-2105241203.json
+  serviceAccountKeyPath: log-mon-sa-2105242043.json
   # (Optional) Disable vsphere resource metrics collection from vcenter.  False by
   # default
   disableVsphereResourceMetrics: false
@@ -233,10 +233,10 @@ gkeConnect:
   projectID: anthos-onprem-demo-314300
   # The absolute or relative path to the key file for a GCP service account used to
   # register the cluster
-  registerServiceAccountKeyPath: connect-register-sa-2105241203.json
+  registerServiceAccountKeyPath: connect-register-sa-2105242043.json
   # The absolute or relative path to the key file for a GCP service account used by
   # the GKE connect agent
-  agentServiceAccountKeyPath: connect-agent-sa-2105241203.json
+  agentServiceAccountKeyPath: connect-agent-sa-2105242043.json
 # (Optional) Specify Cloud Run configuration
 cloudRun:
   enabled: false
