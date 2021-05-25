@@ -61,7 +61,7 @@ loadBalancer:
     # Used to connect to the Kubernetes API
     controlPlaneVIP: "172.23.128.85"
     # Shared by all services for ingress traffic
-    ingressVIP: "172.23.128.90"
+    ingressVIP: "172.23.128.88"
   # (Required) Which load balancer to use "F5BigIP" "Seesaw" or "ManualLB". Uncomment
   # the corresponding field below to provide the detailed spec
   kind: Seesaw
