@@ -6,7 +6,7 @@ rules:
 - apiGroups:
   - ""
   resourceNames:
-  - 877378453679@cloudbuild.gserviceaccount.com
+  - 574816103089@cloudbuild.gserviceaccount.com
   - admin@zaynabs.altostrat.com
   resources:
   - users
