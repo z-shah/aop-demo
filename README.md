@@ -1,6 +1,5 @@
 # aop-demo
 
-
 #### AOP networking config in a nut-shell
 
 **Admin cluster Configuration:**
