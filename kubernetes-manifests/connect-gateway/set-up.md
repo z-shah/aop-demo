@@ -9,7 +9,7 @@ gcloud services enable \
     cloudbuild.googleapis.com \
     --project ${PROJECT_ID}
 
-MEMBER=serviceAccount:877378453679@cloudbuild.gserviceaccount.com
+MEMBER=serviceAccount:574816103089@cloudbuild.gserviceaccount.com
 gcloud projects add-iam-policy-binding ${PROJECT_ID} --member ${MEMBER} --role roles/gkehub.gatewayAdmin
 gcloud projects add-iam-policy-binding ${PROJECT_ID} --member ${MEMBER} --role roles/gkehub.viewer
 
