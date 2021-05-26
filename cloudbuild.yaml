@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: /bin/sh
+  id: Deploy to On-Prem Cluster
+  args:
+  - '-c'
+  - |
+    set -x && \
+    export KUBECONFIG="$(pwd)/gateway-kubeconfig" && \
+    gcloud beta container hub memberships get-credentials aop-poc-user-cluster && \
+    kubectl --kubeconfig gateway-kubeconfig apply -f kubernetes-manifests/myapp.yaml
