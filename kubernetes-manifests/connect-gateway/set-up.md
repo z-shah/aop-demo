@@ -13,11 +13,14 @@ gcloud services enable \
     --project ${PROJECT_ID}
 ```
 
+#### Grant IAM permissions to cloud build service account
+
 ```
 MEMBER=serviceAccount:574816103089@cloudbuild.gserviceaccount.com
 gcloud projects add-iam-policy-binding ${PROJECT_ID} --member ${MEMBER} --role roles/gkehub.gatewayAdmin
 gcloud projects add-iam-policy-binding ${PROJECT_ID} --member ${MEMBER} --role roles/gkehub.viewer
 ```
+#### Grant IAM permissions to user account
 
 ```
 MEMBER=user:admin@zaynabs.altostrat.com
