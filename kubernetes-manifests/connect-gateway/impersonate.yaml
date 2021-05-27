@@ -8,6 +8,7 @@ rules:
   resourceNames:
   - 574816103089@cloudbuild.gserviceaccount.com
   - admin@zaynabs.altostrat.com
+  - shanilevy@zaynabs.altostrat.com
   resources:
   - users
   verbs:
