@@ -7,6 +7,8 @@ subjects:
   name: 574816103089@cloudbuild.gserviceaccount.com
 - kind: User
   name: admin@zaynabs.altostrat.com
+- kind: User
+  name: shanilevy@zaynabs.altostrat.com
 roleRef:
   kind: ClusterRole
   name: cluster-admin
